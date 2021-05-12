@@ -20,7 +20,7 @@ public:
     void add_tag(uint8_t *key) {
         for (int i = 0; i < num_of_hashes; ++i) {
             long index = SpookyHash::Hash64(key, key_len, i) % num_of_bits;
-            bits.flip(index);
+            bits.set(index);
         }
     }
 
